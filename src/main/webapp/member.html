@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="common.css">
+<script type="text/javascript">
+	function chk() {
+		if (frm.password.value != frm.password2.value){
+			alert("비밀번호가 일치하지 않습니다."); frm.password.focus();
+			frm.password.value=""; frm.password2.value="";
+			return false;
+		}
+		if (!frm.gender.value){
+			alert("성별을 체크하시오"); return false;
+		}
+	}
+</script>
+</head>
+<body>
+	<form action="Member" method="post" name="frm" onsubmit="return chk()">
+		<table border="1">
+			<caption>회원가입</caption><tr>
+				<th>이름</th>
+				<td><input type="text" name="name" autofocus="autofocus"
+					required="required"></td>
+			</tr>
+			<tr>
+				<th>아이디</th>
+				<td><input type="text" name="id" required="required"></td>
+			</tr>
+			<tr>
+				<th>암호</th>
+				<td><input type="password" name="password" required="required"></td>
+			</tr>
+			<tr>
+				<th>암호확인</th>
+				<td><input type="password" name="password2" required="required"></td>
+			</tr>
+			<tr>
+				<th>성별</th>
+				<td>
+				<label for="male">남자</label>
+				<input type="radio" name="gender" id="male" value="남자"><br>
+				<label for="female">여자</label>
+				<input type="radio" name="gender" id="female" value="여자">
+				</td>
+			</tr>
+			<tr>
+				<th>메일</th>
+				<td>
+					<input type="text" name="email">				
+				</td>
+			</tr>
+			<tr>
+				<th>메일 수신 여부</th>
+				<td>
+				<label for="e1">공지</label>
+				<input type="checkbox" name="email" id="e1" value="공지">
+				<label for="e2">광고</label>
+				<input type="checkbox" name="email" id="e2" value="광고">
+				<label for="e3">배송</label>
+				<input type="checkbox" name="email" id="e3" value="배송">
+				</td>
+			</tr>
+			<tr>
+				<th>취미</th>
+				<td><select name="hobby" multiple="multiple" size="4">
+						<option>침뱉기
+						<option>졸기
+						<option>울기
+						<option>눕기 
+						</select></td>
+			</tr>
+			<tr>
+				<th colspan="2"><input type="submit" value="확인">
+					<input type="reset" value="취소"></th>
+			</tr>
+			</table>
+	</form>
+
+</body>
+</html>
