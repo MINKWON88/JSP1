@@ -19,7 +19,6 @@ public class Addr extends HttpServlet {
 		String addr = request.getParameter("addr");
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-//		헐 대박
 		out.println("<html><body>");
 		out.println("<h2>이름과 주소</h2>");
 		out.println(name + "님 " + addr + "에 사시는 군요");
